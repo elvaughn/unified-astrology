@@ -68,14 +68,14 @@ section::after {
 }
 
 .scrolled-nav li:not(:last-of-type) {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .scrolled-nav li a:visited,
 .scrolled-nav li a:link {
     text-transform: uppercase;
     text-decoration: none;
-    color: #34495e;
+    color: #e74c3c;
     padding-bottom: 2px;
     border-bottom: 2px solid transparent;
     font-weight: 600;
