@@ -6,7 +6,7 @@ window.onscroll = () => {
     const logoSecond = document.querySelector('.scrolled-logo img')
     const secondaryNavigation = document.querySelector('.scrolled-nav')
     console.log(window.pageYOffset)
-    logoSecond.style.transform = 'rotate('+window.pageYOffset/3+'deg)';
+    logoSecond.style.transform = 'rotate('+window.pageYOffset/10+'deg)';
    if (window.scrollY > 180) {
        secondaryLogo.classList.add('expanded-logo')
        secondaryNavigation.classList.add('expanded-nav')
