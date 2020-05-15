@@ -133,8 +133,10 @@
     }
 
     .scrolled-logo {
-        left: 4%;
-        top: 4%;
+        left: 0%;
+        top: 0%;
+        width: 100%;
+        padding: 10px;
     }
 
     h1 {

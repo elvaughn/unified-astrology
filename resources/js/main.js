@@ -32,4 +32,11 @@ const onLoad = function() {
             ui.secondaryLogoImg.style.transform = 'rotate('+window.pageYOffset/7+'deg)';
         }
     }
+
+    if (screen.width < 650) {
+        window.onscroll = () => {
+            if (window.scrollY > 35)
+            ui.secondaryLogoDiv.classList.add('scrolled-mini')
+        }
+    }
 }()
