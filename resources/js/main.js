@@ -1,4 +1,4 @@
-const onLoad = function() {
+const onLoad = function () {
 
     // UI ELEMENTS 
 
@@ -14,7 +14,7 @@ const onLoad = function() {
         window.onscroll = () => {
             ui.mouseAnimatedIcon.classList.add('hidden')
             if (window.scrollY > 200) {
-                ui.secondaryLogoImg.style.transform = 'rotate('+window.pageYOffset/4+'deg)';
+                ui.secondaryLogoImg.style.transform = 'rotate(' + window.pageYOffset / 4 + 'deg)';
                 ui.secondaryLogoDiv.classList.add('expanded-logo')
                 ui.secondaryNavigation.classList.add('expanded-nav')
                 ui.navigation.classList.add('scrolled')
@@ -29,14 +29,25 @@ const onLoad = function() {
         ui.secondaryLogoDiv.classList.add('expanded-logo')
         ui.mouseAnimatedIcon.classList.add('hidden')
         window.onscroll = () => {
-            ui.secondaryLogoImg.style.transform = 'rotate('+window.pageYOffset/7+'deg)';
+            ui.secondaryLogoImg.style.transform = 'rotate(' + window.pageYOffset / 7 + 'deg)';
         }
     }
 
-    if (screen.width < 650) {
+    if (screen.width < 651) {
         window.onscroll = () => {
-            if (window.scrollY > 35)
-            ui.secondaryLogoDiv.classList.add('scrolled-mini')
+            ui.secondaryLogoImg.style.transform = 'rotate(' + window.pageYOffset / 7 + 'deg)';
+            if (window.scrollY > 45) {
+                ui.secondaryLogoDiv.classList.add('scrolled-mini');
+                ui.secondaryLogoImg.src = 'resources/img/logo-white.svg';
+            }
         }
     }
+
+    // if (screen.width < 650) {
+    //     window.onscroll = () => {
+    //         ui.secondaryLogoImg.style.transform = 'rotate(' + window.pageYOffset / 7 + 'deg)';
+    //         if (window.scrollY > 35)
+    //             ui.secondaryLogoDiv.classList.add('scrolled-mini')
+    //     }
+    // }
 }()

@@ -132,6 +132,11 @@
         width: 400px;
     }
 
+    header::after,
+    section::after {
+        width: 400px;
+    }
+
     .scrolled-logo {
         left: 0%;
         top: 0%;
@@ -140,14 +145,13 @@
     }
 
     h1 {
-        font-size: 200%;
+        font-size: 180%;
     }
 
     h2 {
         font-size: 150%;
         margin-bottom: 30px;
     }
-
     .header-textbox p {
         font-size: 90%;
         padding-right: 20%;
@@ -156,6 +160,11 @@
 
 @media only screen and (max-width: 575px) {
     .row {
+        width: 300px;
+    }
+
+    header::after,
+    section::after {
         width: 300px;
     }
 
@@ -172,5 +181,15 @@
     p {
         font-size: 15px;
         font-weight: 400;
+    }
+    .footer-logo img {
+        width: 25px;
+    }
+    .footer-logo a h4 {
+        display: none;
+    }
+
+    .footer-social a ion-icon {
+        width: 20px;
     }
 }
