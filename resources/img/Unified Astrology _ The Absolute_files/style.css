@@ -85,9 +85,8 @@ h3 {
     margin-bottom: 20px;
     font-size: 110%;
     line-height: 140%;
-    width: 850px;
+    padding-right: 37%;
 }
-
 
 /*!      Buttons      */
 
@@ -127,10 +126,7 @@ nav {
     padding: 30px 200px;
     width: 100%;
     position: fixed;
-    top: 0;
-    left: 0;
-    opacity: 1;
-    transition: all .5s ease;
+    transition: all .5s smooth;
 }
 
 .logo {
@@ -187,10 +183,7 @@ nav {
     top: 10%;
     left: -200px;
     width: 40px;
-    opacity: 0;
     height: auto;
-    transition: left .5s ease, opacity .5s ease;
-    z-index: 5;
 }
 
 .scrolled-nav-main {
@@ -198,9 +191,6 @@ nav {
     position: fixed;
     top: 10%;
     right: -200px;
-    opacity: 0;
-    transition: right .5s ease, opacity .5s ease;
-    z-index: 5;
 }
 
 .scrolled-nav-main li {
@@ -208,82 +198,7 @@ nav {
 }
 
 
-.main-retracted {
-    top: -10% !important;
-    opacity: 0 !important;
-}
 
-.secondLogo-extended {
-    left: 7.5% !important;
-    opacity: 1 !important;
-}
-
-.secondNav-extended {
-    right: 7.5%;
-    opacity: 1;
-}
-.mobile-nav-logo {
-    display: none;
-    width: 30px;
-    position: fixed;
-    top: 2.5%;
-    left: 2.5%;
-
-}
-.mobile-nav-icon {
-    display: none;
-    color: #34495e;
-    z-index: 3;
-}
-
-.mobile-nav-overlay {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    height: 100vh;
-    width: 90%;
-    background: #e74c3c;
-    overflow: hidden;
-    z-index: 2;
-    transition: left .5s ease;
-}
-
-.mobile-nav-menu {
-    display: block;
-    list-style: none;
-    margin: 0 auto;
-}
-
-.mobile-nav-container {
-    height: 100%;
-    width: 100%;
-    position: relative;
-}
-
-.mobile-nav-overlay ul {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.mobile-nav-container ul li:not(:last-of-type) {
-    margin-bottom: 30px;
-
-}
-
-.mobile-nav-overlay ul li a:link,
-.mobile-nav-overlay ul li a:visited {
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 400;
-    text-decoration: none;
-    font-size: 200%;
-}
-
-.overlay-expanded {
-    left: 0;
-}
 /*! ****************************************************/
 /*!                          HEADER                    */
 /*! ****************************************************/

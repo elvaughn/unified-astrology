@@ -1,195 +1,302 @@
-@media only screen and (max-width: 1370px) {
-    .header-textbox p {
-        margin-bottom: 20px;
-        font-size: 110%;
-        line-height: 140%;
-        padding-right: 20%;
+/**  Tablets in landscape mode, older desktop monitors **/
+@media only screen and (min-width: 1024px) and (max-width: 1365px) {
+    nav {
+        padding: 25px 30px;
+        background-color: rgb(245, 244, 244);
+        z-index: 5;
     }
+
+    .row {
+        width: 70%;
+    }
+
+    .header-textbox p {
+        padding: 0;
+    }
+
 }
 
-@media only screen and (max-width: 1250px) {
-    h1 {
-        font-size: 300%;
-        word-spacing: 2px;
-        letter-spacing: 1px;
-        margin-bottom: 20px;
-    }
-
-    .header-textbox p {
-        font-size: 105%;
-        padding-right: 20%;
-    }
-
-    header::after,
-    section::after {
-        width: 71%;
+/**  Tablets in portrait mode, large display smartphones landscape mode **/
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    header {
+        text-align: center;
     }
 
     nav {
-        padding: 30px 100px;
+        display: none;
     }
 
-    .expanded-logo {
-        left: 3.5%;
-    }
-    
-    .expanded-nav {
-        right: 3.5%;
-    }
-
-    .logo {
-        width: 40px;
-    }
-}
-
-@media only screen and (max-width: 1160px) {
-    .expanded-logo {
-        left: 2.5%;
-    }
-    
-    .expanded-nav {
+    .mobile-nav-icon {
+        display: block;
+        position: fixed;
+        top: 2.5%;
         right: 2.5%;
     }
-}
-
-@media only screen and (max-width: 1070px) {
-    .row {
-        width: 600px;
+    .mobile-nav-icon ion-icon {
+        width: 50px;
     }
-    .expanded-logo {
-        left: 2.5%;
+    .mobile-nav-logo {
+        display: block;
     }
     
-    .expanded-nav {
-        right: 2.5%;
-    }
-
-}
-
-@media only screen and (max-width: 1005px) {
-    h1 {
-        font-size: 270%;
-    }
-
-    .header-textbox p {
-        font-size: 95%;
-        padding-right: 20%;
-    }
-    .expanded-logo {
-        left: 7%;
-    }
-}
-
-@media only screen and (max-width: 900px) {
     .row {
-        width: 450px;
-    }
-    .scrolled-logo img {
-        width: 35px;
-    }
-    h1 {
-        font-size: 250%;
+        width: 65%;
     }
 
-    h2 {
-        font-size: 170%;
-    }
-
-    .header-textbox p {
-        font-size: 95%;
-        padding-right: 20%;
-    }
-
-    .main-text {
-        font-size: 16px;
-    }
-    .expanded-logo {
-        left: 7%;
-    }
-
-    header::after,
-    section::after {
-        width: 60%;
-    }
-
-    .btn:link,
-    .btn:visited {
-        font-size: 18px;
-    }
-
-    .footer-logo a h4 {
-        font-size: 15px;
-    }
-
-    .footer-social a ion-icon {
-        font-size: 25px;
-        margin-left: 5px;
-    }
-}
-
-@media only screen and (max-width: 650px) {
-    .row {
-        width: 400px;
-    }
-
-    header::after,
-    section::after {
-        width: 400px;
-    }
-
-    .scrolled-logo {
-        left: 0%;
-        top: 0%;
-        width: 100%;
-        padding: 10px;
-    }
-
-    h1 {
-        font-size: 180%;
-    }
-
-    h2 {
-        font-size: 150%;
-        margin-bottom: 30px;
-    }
-    .header-textbox p {
-        font-size: 90%;
-        padding-right: 20%;
-    }
-}
-
-@media only screen and (max-width: 575px) {
-    .row {
-        width: 300px;
-    }
-
-    header::after,
-    section::after {
-        width: 300px;
+    section {
+        padding: 70px 0;
     }
 
     h1 {
         font-size: 160%;
+        word-spacing: 1px;
+        letter-spacing: 0px;
+    }
+
+    h2 {
+        font-size: 130%;
+        margin-bottom: 30px;
+    }
+
+    .header-textbox {
+        position: absolute;
+        top: 50%;
+        left: 0%;
     }
 
     .header-textbox p {
-        font-size: 16px;
-        letter-spacing: 0;
-        line-height: 1.3;
-    }
-
-    p {
-        font-size: 15px;
+        font-size: 100%;
+        line-height: 140%;
+        width: 70%;
+        margin: 0 auto 20px;
+        padding: 0;
         font-weight: 400;
     }
-    .footer-logo img {
-        width: 25px;
+
+    header::after,
+    section::after {
+        content: " ";
+        display: block;
+        width: 65%;
+        border-bottom: 1px solid #C9CCD2;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%)
     }
-    .footer-logo a h4 {
+
+    .main-text {
+        font-size: 90%;
+    }
+
+    .btn:link,
+    .btn:visited {
+        font-size: 100%;
+    }
+}
+
+/**  Smartphones in landscape mode **/
+@media only screen and (min-width: 421px) and (max-width: 767px) {
+    header {
+        text-align: center;
+    }
+
+    nav {
         display: none;
     }
 
+    .mobile-nav-icon {
+        display: block;
+        position: fixed;
+        top: 2.5%;
+        right: 2.5%;
+    }
+    .mobile-nav-icon ion-icon {
+        width: 50px;
+    }
+    .mobile-nav-logo {
+        display: block;
+    }
+
+    .row {
+        width: 65%;
+    }
+
+    section {
+        padding: 70px 0;
+    }
+
+    h1 {
+        font-size: 160%;
+        word-spacing: 1px;
+        letter-spacing: 0px;
+    }
+
+    h2 {
+        font-size: 130%;
+        margin-bottom: 30px;
+    }
+
+    .main-text {
+        font-size: 90%;
+    }
+
+    .main-text:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    .header-textbox {
+        position: absolute;
+        top: 50%;
+        left: 0%;
+    }
+
+    .header-textbox p {
+        font-size: 90%;
+        line-height: 140%;
+        width: 70%;
+        margin: 0 auto 20px;
+        padding: 0;
+        font-weight: 400;
+    }
+
+    .btn:link,
+    .btn:visited {
+        font-size: 100%;
+    }
+
+    header::after,
+    section::after {
+        content: " ";
+        display: block;
+        width: 65%;
+        border-bottom: 1px solid #C9CCD2;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%)
+    }
+
+    footer {
+        padding: 50px 0;
+        text-align: center;
+    }
+
+    footer .col {
+        width: 100%;
+    }
+    footer .col:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    .footer-logo h4 {
+        display: inline-block;
+        font-size: 70%;
+    }
+
+    .footer-social {
+        float: none;
+    }
+
     .footer-social a ion-icon {
-        width: 20px;
+        width: 25px;
+        margin: 0;
+    }
+
+    .footer-social a:not(:last-child) ion-icon {
+        margin-left: 5px;
+    }
+}
+
+/**  Smartphones in portrait mode **/
+@media only screen and (max-width: 420px) {
+    header {
+        text-align: center;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .mobile-nav-icon {
+        display: block;
+        position: fixed;
+        top: 2.5%;
+        right: 2.5%;
+    }
+    .mobile-nav-icon ion-icon {
+        width: 50px;
+    }
+    .mobile-nav-logo {
+        display: block;
+    }
+
+    .row {
+        width: 65%;
+    }
+
+    section {
+        padding: 70px 0;
+    }
+
+    h1 {
+        font-size: 160%;
+        word-spacing: 1px;
+        letter-spacing: 0px;
+    }
+
+    h2 {
+        font-size: 130%;
+        margin-bottom: 30px;
+    }
+
+    .main-text {
+        font-size: 90%;
+    }
+
+    .main-text:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    .header-textbox {
+        position: absolute;
+        top: 50%;
+        left: 0%;
+    }
+
+    .header-textbox p {
+        font-size: 90%;
+        line-height: 140%;
+        width: 70%;
+        margin: 0 auto 20px;
+        padding: 0;
+        font-weight: 400;
+    }
+
+    .btn:link,
+    .btn:visited {
+        font-size: 100%;
+    }
+
+    header::after,
+    section::after {
+        content: " ";
+        display: block;
+        width: 70%;
+        border-bottom: 1px solid #C9CCD2;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%)
+    }
+
+    footer {
+        padding: 30px;
+        text-align: center;
+    }
+
+    .footer-logo {
+        display: none;
+    }
+
+    .footer-social {
+        float: none;
     }
 }

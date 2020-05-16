@@ -1,53 +1,81 @@
-const onLoad = function () {
-
-    // UI ELEMENTS 
-
-    const ui = {
-        mouseAnimatedIcon: document.querySelector('.mouse-scroll-icon'),
-        navigation: document.querySelector('nav'),
-        secondaryLogoDiv: document.querySelector('.scrolled-logo'),
-        secondaryLogoImg: document.querySelector('.scrolled-logo img'),
-        secondaryNavigation: document.querySelector('.scrolled-nav')
+const uiController= function() {
+    uiElements = {
+        mainNav: document.querySelector('nav'),
+        mainNavLogo: document.querySelector('.logo a img'),
+        scrolledNavLogo: document.querySelector('.scrolled-navigation img'),
+        scrolledNav: document.querySelector('.scrolled-nav-main'),
+        copyrightSpan: document.querySelector('#copyYear'),
+        mobileMenuIcon: document.querySelector('.mobile-nav-icon'),
+        mobileMenuOverlay: document.querySelector('.mobile-nav-overlay'),
+        mobileMenuLogo: document.querySelector('.mobile-nav-logo img'),
+        mobileNavLinks: Array.prototype.slice.call(document.querySelectorAll('.mobile-nav-overlay ul li a'))
     }
-    if (screen.width > 1005) {
-        ui.navigation.classList.add('animated-top')
-        window.onscroll = () => {
-            ui.mouseAnimatedIcon.classList.add('hidden')
-            if (window.scrollY > 200) {
-                ui.secondaryLogoImg.style.transform = 'rotate(' + window.pageYOffset / 4 + 'deg)';
-                ui.secondaryLogoDiv.classList.add('expanded-logo')
-                ui.secondaryNavigation.classList.add('expanded-nav')
-                ui.navigation.classList.add('scrolled')
+    return uiElements;
+}
+
+
+const functionController = function() {
+    const interactions = {
+        setDate: function(dateSpan) {
+            dateSpan.textContent = new Date().getFullYear()
+        },
+        navigationShift: function(mainNav, mainNavLogo, secondNavLogo, secondNav, mobileMenuLogo) {
+            if (screen.width > 1365) {
+                window.onscroll = () => {
+                    if (window.scrollY > 160) {
+                        secondNavLogo.style.transform = 'rotate('+window.pageYOffset/8+'deg)';
+                        mainNav.classList.add('main-retracted');
+                        secondNavLogo.classList.add('secondLogo-extended');
+                        secondNav.classList.add('secondNav-extended');
+                    } else {
+                        mainNav.classList.remove('main-retracted');
+                        secondNavLogo.classList.remove('secondLogo-extended');
+                        secondNav.classList.remove('secondNav-extended')
+                    }
+                }
+            } else if (screen.width > 1023) {
+                window.onscroll = () => {
+                    mainNavLogo.style.transform = 'rotate('+window.pageYOffset/8+'deg)';
+                }
             } else {
-                ui.navigation.classList.remove('scrolled')
-                ui.secondaryLogoDiv.classList.remove('expanded-logo')
-                ui.secondaryNavigation.classList.remove('expanded-nav')
+                window.onscroll = () => {
+                    mobileMenuLogo.style.transform = 'rotate('+window.pageYOffset/8+'deg)';
+                }
             }
+        },
+        mobileNavToggle: function(navIcon, overlay) {
+            navIcon.addEventListener('click', () => {
+                overlay.classList.toggle('overlay-expanded')
+            })
+        },
+
+        activateMobileNavigationLinks: function(navLinks, overlay) {
+            navLinks.forEach(navlink => {
+                navlink.addEventListener('click', () => {
+                    overlay.classList.remove('overlay-expanded')
+                })
+            })
         }
-    } else {
-        ui.navigation.classList.add('hidden')
-        ui.secondaryLogoDiv.classList.add('expanded-logo')
-        ui.mouseAnimatedIcon.classList.add('hidden')
-        window.onscroll = () => {
-            ui.secondaryLogoImg.style.transform = 'rotate(' + window.pageYOffset / 7 + 'deg)';
-        }
+
     }
 
-    if (screen.width < 651) {
-        window.onscroll = () => {
-            ui.secondaryLogoImg.style.transform = 'rotate(' + window.pageYOffset / 7 + 'deg)';
-            if (window.scrollY > 45) {
-                ui.secondaryLogoDiv.classList.add('scrolled-mini');
-                ui.secondaryLogoImg.src = 'resources/img/logo-white.svg';
-            }
-        }
-    }
+    return interactions;
+}
 
-    // if (screen.width < 650) {
-    //     window.onscroll = () => {
-    //         ui.secondaryLogoImg.style.transform = 'rotate(' + window.pageYOffset / 7 + 'deg)';
-    //         if (window.scrollY > 35)
-    //             ui.secondaryLogoDiv.classList.add('scrolled-mini')
-    //     }
-    // }
-}()
+const experienceController = function(uiEl, uiInteractions) {
+
+    const ui = uiEl;
+    const interactions = uiInteractions;
+    console.log(ui.mobileNavLinks)
+    // Set the copyright year based on current date
+    interactions.setDate(ui.copyrightSpan)
+
+    // Change navigation based on screen size
+    interactions.navigationShift(ui.mainNav, ui.mainNavLogo, ui.scrolledNavLogo, ui.scrolledNav, ui.mobileMenuLogo);
+
+    interactions.mobileNavToggle(ui.mobileMenuIcon, ui.mobileMenuOverlay)
+
+    interactions.activateMobileNavigationLinks(ui.mobileNavLinks, ui.mobileMenuOverlay)
+
+
+}(uiController(), functionController())
