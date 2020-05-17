@@ -229,6 +229,10 @@
         display: block;
     }
 
+    .mobile-nav-overlay {
+        width: 100%;
+    }
+
     .row {
         width: 65%;
     }

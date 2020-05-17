@@ -241,17 +241,19 @@ nav {
     top: 0;
     left: -100%;
     height: 100vh;
-    width: 90%;
-    background: #e74c3c;
+    width: 50%;
+    background: #fff;
     overflow: hidden;
     z-index: 2;
     transition: left .5s ease;
+    box-shadow: 2px 0 2px rgba(0,0,0,0.1)
 }
 
 .mobile-nav-menu {
     display: block;
     list-style: none;
     margin: 0 auto;
+    width: 80%;
 }
 
 .mobile-nav-container {
@@ -266,24 +268,38 @@ nav {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
+.mobile-nav-container ul li:first-of-type h4 {
+    margin-bottom: 60px;
+}
 .mobile-nav-container ul li:not(:last-of-type) {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+}
+/* .mobile-nav-container ul li {
+    width: 80%;
+} */
+.mobile-nav-container ul li a img {
+    width: 50px;
+    margin-bottom: 20px;
+}
 
+.mobile-nav-container ul li h4 {
+    font-size: 85%;
 }
 
 .mobile-nav-overlay ul li a:link,
 .mobile-nav-overlay ul li a:visited {
-    color: #fff;
+    color: #34495e;
     text-transform: uppercase;
     font-weight: 400;
     text-decoration: none;
-    font-size: 200%;
+    font-size: 120%;
 }
 
 .overlay-expanded {
     left: 0;
 }
+
+
 /*! ****************************************************/
 /*!                          HEADER                    */
 /*! ****************************************************/
@@ -418,6 +434,39 @@ ion-icon {
 /*!                      ANIMATIONS                    */
 /*! ****************************************************/
 
-/*? CLASSES */
 
-/* KEYFRAMES */
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+    from {
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes rotating {
+    from {
+      -ms-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -ms-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  .rotating {
+    -webkit-animation: rotating 6s linear infinite;
+    -moz-animation: rotating 6s linear infinite;
+    -ms-animation: rotating 6s linear infinite;
+    -o-animation: rotating 4s linear infinite;
+    animation: rotating 6s linear infinite;
+  }
