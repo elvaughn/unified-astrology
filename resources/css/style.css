@@ -270,13 +270,12 @@ nav {
 }
 .mobile-nav-container ul li:first-of-type h4 {
     margin-bottom: 30px;
+    font-size: 120%;
 }
 .mobile-nav-container ul li:not(:last-of-type) {
     margin-bottom: 15px;
 }
-/* .mobile-nav-container ul li {
-    width: 80%;
-} */
+
 .mobile-nav-container ul li a img {
     width: 50px;
     margin-bottom: 20px;
