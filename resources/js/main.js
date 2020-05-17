@@ -64,17 +64,6 @@ const functionController = function () {
             })
         },
 
-        closeOverlayOnClick: function (overlay) {
-            document.onclick = function (e) {
-                console.log(e.target.id, )
-                if (e.target.id != overlay) {
-                    if (overlay.classList.contains('overlay-expanded')) {
-                        overlay.classList.remove('overlay-expanded')
-                    }
-                }
-            }
-        },
-
         loadParticles: function () {
             particlesJS.load('particles-js', 'vendors/js/particles.json', function() {
                 console.log('callback - particles.js config loaded');
@@ -99,8 +88,6 @@ const experienceController = function (uiEl, uiInteractions) {
     interactions.mobileNavToggle(ui.mobileMenuIcon, ui.mobileMenuOverlay)
 
     interactions.activateMobileNavigationLinks(ui.mobileNavLinks, ui.mobileMenuOverlay)
-
-    interactions.closeOverlayOnClick(ui.mobileMenuOverlay)
 
     interactions.loadParticles()
 

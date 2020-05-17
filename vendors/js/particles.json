@@ -73,7 +73,7 @@
       },
       "onclick": {
         "enable": true,
-        "mode": "push"
+        "mode": "bubble"
       },
       "resize": true
     },
@@ -85,18 +85,18 @@
         }
       },
       "bubble": {
-        "distance": 400,
-        "size": 40,
-        "duration": 2,
-        "opacity": 8,
-        "speed": 3
+        "distance": 100,
+        "size": 2,
+        "duration": 1,
+        "opacity": 0.7,
+        "speed": 2
       },
       "repulse": {
         "distance": 10,
         "duration": 0.4
       },
       "push": {
-        "particles_nb": 4
+        "particles_nb": 6
       },
       "remove": {
         "particles_nb": 2
