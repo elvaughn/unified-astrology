@@ -269,10 +269,10 @@ nav {
     transform: translate(-50%, -50%);
 }
 .mobile-nav-container ul li:first-of-type h4 {
-    margin-bottom: 60px;
+    margin-bottom: 30px;
 }
 .mobile-nav-container ul li:not(:last-of-type) {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 /* .mobile-nav-container ul li {
     width: 80%;
