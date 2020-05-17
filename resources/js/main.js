@@ -36,11 +36,11 @@ const functionController = function () {
                 }
             } else if (screen.width > 1023) {
                 window.onscroll = () => {
-                    mainNavLogo.style.transform = 'rotate(' + window.pageYOffset / 8 + 'deg)';
+                    mainNavLogo.style.transform = 'rotate(' + (-window.pageYOffset / 8) + 'deg)';
                 }
             } else {
                 window.onscroll = () => {
-                    mobileMenuLogo.style.transform = 'rotate(' + window.pageYOffset / 8 + 'deg)';
+                    mobileMenuLogo.style.transform = 'rotate(' + (-window.pageYOffset / 8) + 'deg)';
                 }
             }
         },
