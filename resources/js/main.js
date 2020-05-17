@@ -48,9 +48,13 @@ const functionController = function () {
             navIcon.addEventListener('click', () => {
                 if (overlay.classList.contains('overlay-expanded')) {
                     overlay.classList.remove('overlay-expanded')
+                    navIcon.innerHTML = '<ion-icon name="menu-outline"></ion-icon>'
+                    console.log(navIcon)
                 } else {
                     setTimeout(() => {
                         overlay.classList.toggle('overlay-expanded')
+                        navIcon.innerHTML = '<ion-icon name="close-outline"></ion-icon>'
+                        console.log(navIcon)
                     }, 50)
                 }
             })
